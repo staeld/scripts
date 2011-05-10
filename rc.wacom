@@ -1,6 +1,6 @@
 #!/bin/bash
-
-#PATH="/mnt/sda7/staeld/diverse/software/source/linuxwacom-0.8.2-2/src/util:${PATH}"
+# rc.wacom - set the keys of the tablet to something useful (gimp setup)
+# Released into free domain
 
 xsetwacom set "Wacom Bamboo pad" button1 "key ctrl z"
 xsetwacom set "Wacom Bamboo pad" button2 "key p"

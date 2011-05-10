@@ -1,5 +1,8 @@
 #!/bin/bash
-# archupdates.2.sh - check for available updates
+# archupdates.2.sh - check for available updates via pacman
+# Copyright Stæld Lakorv, 2010 <staeld@staeld.co.cc>
+# Released under the GNU GPLv3
+#
 # v.2a1 - 2010-08-08/13:42
 
 LOGFILE=~/.archupdates.2.sh.log

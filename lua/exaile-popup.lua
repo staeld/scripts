@@ -1,4 +1,8 @@
 #!/usr/bin/env lua
+-- exaile-popup.lua - Send 'now playing' information through libnotify (using notify-send)
+-- Copyright Stæld Lakorv, 2011 <staeld@staeld.co.cc>
+-- Released under the GNU GPLv3
+
 local e = os.execute
 local function r(p)
     local proc = io.popen(p)

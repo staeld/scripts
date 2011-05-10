@@ -1,7 +1,10 @@
 #!/bin/bash
-# change colours in conkyrc
+# conkycolour.sh - change default colours in conkyrc according to a preset list
+# Copyright Stæld Lakorv, 2010-2011 <staeld@staeld.co.cc>
+# Released under the GNU GPLv3
+#
 # usage: $0 CONKYRC COLOUR
-# colours: dark light lighter grey brown red  black
+# colours: dark light lighter grey brown red black
 
 case "$1" in
     "-h"|"--help"|"help"|"")

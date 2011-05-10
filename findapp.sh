@@ -1,4 +1,8 @@
 #!/bin/bash
+# findapp.sh - locate an app in the most common PATHs
+# Copyright Stæld Lakorv, 2010 <staeld@staeld.co.cc>
+# Released under the GNU GPLv3
+
 RESULTSFILE="${HOME}/.searchresults"
 case $1 in
     -h|--help|'')

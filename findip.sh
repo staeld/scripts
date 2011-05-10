@@ -13,11 +13,12 @@
 #       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #       GNU General Public License for more details.
 
+# findip.sh - Geolocate the given IP address(es) or hostmasks
+
 URL='http://www.geobytes.com/IpLocator.htm?GetLocation&template=php3.txt&IpAddress='
 ipFile=/tmp/ipInfo
 
 function resolveHost () {
-    #declare -a IP
     number=0
     for i in "$(nslookup $hostName | grep -A 1 -P '^Name:' | grep -P '^Address:')"; do
         IP=([$number]=$(nslookup $hostName | grep -A 1 -P "^Name:" | grep -P "^Address:" | sed -e 's,^.*: ,,'))
