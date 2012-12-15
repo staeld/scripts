@@ -13,6 +13,13 @@ function help() {
     echo "Skriptet gjer bruk av «ordbanken» av Karl Ove Hufthammer <karl@huftis.org>."
 }
 
+help="Bruk: grunnord [kriterium1] [kriterium2] ...\n\n
+Dette slår opp ordet «grunnord» i fullformsordlista til Norsk ordbank,\n
+med eventuell filtrering etter eitt eller fleire kriterium.\n
+Mulige kriterie er m.a. «subst», «fem» (hokjønn), «verb», «pret» (preteritum),\n
+og så vidare.\n
+Skriptet gjer bruk av «ordbanken» av Karl Ove Hufthammer <karl@huftis.org>."
+
 if [ -z $1 ]; then
     until [ "$spr" == "nn" ] || [ "$spr" == "nb" ]; do
         read -p "Språk? [nn/nb]: " spr
@@ -41,12 +48,16 @@ while [ 1 ]; do
     if [ "$ord" == "quit" ] || [ "$ord" == "exit" ] || [ "$ord" == "avslutt" ]; then
         exit 0
     elif [ -z "$ord" ]; then
+        #text=$help
         help
+        read -p "Trykk enter for nytt søk..."
     else
-        echo "----"
+        echo -e "$(ordbanken -s $spr -- $ord)\n\nTrykk Q for nytt søk..." | less
+        #echo "----"
         # Regexp kutta ut fordi alle ord er delvise treff og ikkje heile ord
-        ordbanken -s $spr -- $ord
+        #ordbanken -s $spr -- $ord
     fi
-    echo "----"
-    read -p "Trykk enter for nytt søk..."
+    #text="${text}----\nTrykk Q for nytt søk..."
+    #read -p "Trykk Q for nytt søk..."
+    #echo $text | less
 done
